@@ -1,19 +1,32 @@
 #include <iostream>
 
-unsigned long long fibonacci(int n, unsigned long long a,
-                             unsigned long long b) {
-  if (n == 1)
-    return a;
-  if (n == 2)
-    return b;
+void fibonacci(int n) {
+  if (n < 1) {
+    return;
+  }
 
-  return fibonacci(n - 1, b, a + b);
+  std::cout << 0 << std::endl;
+  if (n == 1) {
+    return;
+  }
+  std::cout << 1 << std::endl;
+  if (n == 2) {
+    return;
+  }
+  unsigned long long a = 0;
+  unsigned long long b = 1;
+  unsigned long long c;
+  while ((n - 2) > 0) {
+    c = a + b;
+    std::cout << c << std::endl;
+    a = b;
+    b = c;
+    --n;
+  }
 }
 
 int main() {
   int n;
   std::cin >> n;
-  if (n >= 1) {
-    std::cout << fibonacci(n, 0, 1) << std::endl;
-  }
+  fibonacci(n);
 }
