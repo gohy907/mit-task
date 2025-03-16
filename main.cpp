@@ -14,6 +14,6 @@ int main() {
   int n;
   std::cin >> n;
   if (n >= 1) {
-    std::cout << fibonacci(n, 1, 1) << std::endl;
+    std::cout << fibonacci(n, 0, 1) << std::endl;
   }
 }
